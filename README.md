@@ -1,4 +1,4 @@
-# cd Travel Concierge
+# Travel Concierge
 
   The Travel Concierge app let you find the best place to take vacacions based on what you want to do. It uses Concept Insights to search for activities, Tradeoff Analytics to decide where to go and Question and Answer to answer questions about those places.
 
