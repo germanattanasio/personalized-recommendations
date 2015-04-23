@@ -1,0 +1,51 @@
+//- layout.jade
+doctype html
+html(lang='en')
+  head
+    block title
+      title Travel Concierge
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='shortcut icon', href='/images/favicon.ico', type='image/x-icon')
+    link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', href='/css/watson-bootstrap-dark.css')
+    link(rel='stylesheet', href='/css/banner.css')
+    link(rel='stylesheet', href='/css/style.css')
+
+  body
+    div.container
+      div.row
+        div.col-lg-12
+          div.row.top-nav
+            div.col-lg-12
+              h3.heading.left
+                span World of Watson
+                | : Travel Concierge
+              a.right(href='http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/') Watson Developer Cloud
+              span.powered.right Powered by:
+
+          div.row.header(style='padding-bottom:0px;')
+            div.avatar.img-container.col-lg-1.col-xs-1
+              img(src='/images/app.png')
+            div.col-lg-6.col-xs-6
+              h2 Travel Concierge
+              p The Travel Concierge app let you find the best place to take vacacions
+                | based on what you want to do. It uses Concept Insights to search for activities,
+                | Tradeoff Analytics to decide where to go and Question and Answer to answer questions about those places.
+            div.col-lg-4.col-xs-4.build-your-own
+              h3 Build your own:
+              a.left.fork(href='https://bluemix.net/deploy?repository=https://github.com/germanattanasio/travel-concierge.git') Fork and Deploy on Bluemix
+              a.right.fork(href='https://github.rtp.raleigh.ibm.com/gattana-us/travel-concierge') Fork on Github
+      block row-content
+
+    script(type='text/javascript', src='/js/handlebars-v3.0.0.js')
+    script(type='text/javascript', src='/js/jquery-1.11.1.min.js')
+    script(type='text/javascript', src='https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js')
+    script(type='text/javascript', src='http://ta-cdn.mybluemix.net/TradeoffAnalytics.js')
+
+    script(type='text/javascript', src='/js/concept-insights.js')
+    script(type='text/javascript', src='/js/question-and-answer.js')
+    script(type='text/javascript', src='/js/tradeoff-analytics.js')

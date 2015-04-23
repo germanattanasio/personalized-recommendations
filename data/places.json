@@ -1,0 +1,180 @@
+[{
+    "key": "paris",
+    "name": "Paris",
+    "values": {
+        "density": 22000,
+        "cost": 619,
+        "distance": 3636
+    },
+    "description_html": ""
+}, {
+    "key": "london",
+    "name": "London",
+    "values": {
+        "density": 5354,
+        "cost": 779,
+        "distance": 3473
+    },
+    "description_html": ""
+}, {
+    "key": "barcelona",
+    "name": "Barcelona",
+    "values": {
+        "density": 15991,
+        "cost": 735,
+        "distance": 3834
+    },
+    "description_html": ""
+}, {
+    "key": "maui",
+    "name": "Maui",
+    "values": {
+        "density": 62.5,
+        "cost": 767,
+        "distance": 4918
+    },
+    "description_html": ""
+}, {
+    "key": "san-francisco",
+    "name": "San Francisco",
+    "values": {
+        "density": 7022,
+        "cost": 344,
+        "distance": 2580
+    },
+    "description_html": ""
+}, {
+    "key": "san-juan-puerto-rico",
+    "name": "San Juan, Puerto Rico",
+    "values": {
+        "density": 3192,
+        "cost": 387,
+        "distance": 1604
+    },
+    "description_html": ""
+}, {
+    "key": "sydney",
+    "name": "Sydney",
+    "values": {
+        "density": 380,
+        "cost": 1463,
+        "distance": 9945
+    },
+    "description_html": ""
+}, {
+    "key": "rio-de-janeiro",
+    "name": "Rio de Janeiro",
+    "values": {
+        "density": 5377,
+        "cost": 806,
+        "distance": 4793
+    },
+    "description_html": ""
+}, {
+    "key": "bora-bora",
+    "name": "Bora Bora, French Polynesia",
+    "values": {
+        "density": 300,
+        "cost": 2228,
+        "distance": 6339
+    },
+    "description_html": ""
+}, {
+    "key": "saint-thomas",
+    "name": "Saint Thomas, US Virgin Islands",
+    "values": {
+        "density": 638.17,
+        "cost": 348,
+        "distance": 1630
+    },
+    "description_html": ""
+}, {
+    "key": "vancouver",
+    "name": "Vancouver",
+    "values": {
+        "density": 2878.52,
+        "cost": 453,
+        "distance": 2441
+    },
+    "description_html": ""
+}, {
+    "key": "edinburgh",
+    "name": "Edinburgh",
+    "values": {
+        "density": 1828,
+        "cost": 832,
+        "distance": 3256
+    },
+    "description_html": ""
+}, {
+    "key": "zurich",
+    "name": "Zurich",
+    "values": {
+        "density": 4400,
+        "cost": 598,
+        "distance": 3933
+    },
+    "description_html": ""
+}, {
+    "key": "montreal",
+    "name": "Montreal",
+    "values": {
+        "density": 4517.6,
+        "cost": 326,
+        "distance": 328
+    },
+    "description_html": ""
+}, {
+    "key": "buenos-aires",
+    "name": "Buenos Aires",
+    "values": {
+        "density": 14000,
+        "cost": 979,
+        "distance": 5280
+    },
+    "description_html": ""
+}, {
+    "key": "reykjavik",
+    "name": "Reykjavik",
+    "values": {
+        "density": 436.5,
+        "cost": 703,
+        "distance": 2614
+    },
+    "description_html": ""
+}, {
+    "key": "portland",
+    "name": "Portland",
+    "values": {
+        "density": 4375.1,
+        "cost": 412,
+        "distance": 2447
+    },
+    "description_html": ""
+}, {
+    "key": "seattle",
+    "name": "Seattle",
+    "values": {
+        "density": 7774,
+        "cost": 424,
+        "distance": 2414
+    },
+    "description_html": ""
+}, {
+    "key": "oslo",
+    "name": "Oslo",
+    "values": {
+        "density": 1400,
+        "cost": 574,
+        "distance": 3686
+    },
+    "description_html": ""
+}, {
+    "key": "mar-del-plata",
+    "name": "Mar del Plata",
+    "values": {
+        "density": 7729,
+        "cost": 1026,
+        "distance": 5509
+    }
+}]

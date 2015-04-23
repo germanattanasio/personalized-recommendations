@@ -1,0 +1,24 @@
+{
+    "subject": "places",
+    "columns": [{
+        "key": "cost",
+        "full_name": "Flight Cost",
+        "type": "NUMERIC",
+        "is_objective": true,
+        "goal": "MIN"
+    }, {
+        "key": "density",
+        "full_name": "Population Density (/km^2)",
+        "type": "NUMERIC",
+        "is_objective": true,
+        "goal": "MAX"
+    }, {
+        "key": "distance",
+        "full_name": "Distance (miles)",
+        "type": "NUMERIC",
+        "is_objective": true,
+        "goal": "MIN"
+    }],
+
+    "options": []
+}

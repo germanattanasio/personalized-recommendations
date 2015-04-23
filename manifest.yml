@@ -1,0 +1,20 @@
+---
+declared-services:
+  question-and-answer-service:
+    label: question_and_answer
+    plan: question_and_answer_free_plan
+  tradeoff-analytics-service:
+    label: tradeoff_analytis
+    plan: free
+  concept-insights-service:
+    label: concept_insights
+    plan: free
+applications:
+- services:
+  - concept-insights-service
+  - tradeoff-analytics-service
+  - question-and-answer-service
+  name: travel-concierge
+  command: node app.js
+  path: .
+  memory: 128M
