@@ -32,9 +32,18 @@ html(lang='en')
               img(src='/images/app.png')
             div.col-lg-6.col-xs-6
               h2 Travel Concierge
-              p The Travel Concierge app let you find the best place to take vacacions
-                | based on what you want to do. It uses Concept Insights to search for activities,
-                | Tradeoff Analytics to decide where to go and Question and Answer to answer questions about those places.
+              p Travel Concierge is a tool that helps you find the best
+                | vacation spots to go to.  This app uses three Watson
+                | APIs: 
+              p
+                a.api-label(href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/concept-insights.html") Concept Insights
+                |  searches for your relevant places.
+              p 
+                a.api-label(href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tradeoff-analytics.html") Tradeoff Analytics
+                |  helps decide which place is best.
+              p 
+                a.api-label(href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/question-answer.html") Question and Answer
+                |  answers your questions about those places.
             div.col-lg-4.col-xs-4.build-your-own
               h3 Build your own:
               a.left.fork(href='https://bluemix.net/deploy?repository=https://github.com/germanattanasio/travel-concierge.git') Fork and Deploy on Bluemix
@@ -43,7 +52,7 @@ html(lang='en')
 
     script(type='text/javascript', src='/js/handlebars-v3.0.0.js')
     script(type='text/javascript', src='/js/jquery-1.11.1.min.js')
-    script(type='text/javascript', src='https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js')
+    script(type='text/javascript', src='https://twitter.github.io/typeahead.js/releases/0.10.5/typeahead.bundle.js')
     script(type='text/javascript', src='http://ta-cdn.mybluemix.net/TradeoffAnalytics.js')
 
     script(type='text/javascript', src='/js/concept-insights.js')

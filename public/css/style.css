@@ -299,3 +299,8 @@ hr {
   padding: 0px;
 }
 
+.header .api-label {
+    color: #00b2ef;
+    display: inline;
+    font-weight: 400;
+}

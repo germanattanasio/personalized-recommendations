@@ -30,6 +30,7 @@ var password = '<password>';
 var corpus = 'locations';
 var problem = JSON.parse(fs.readFileSync('data/problem.json', 'utf8'));
 var places = JSON.parse(fs.readFileSync('data/places.json', 'utf8'));
+var publicCorpusUsername = '30ac56d5-0f6e-43dc-9282-411972b2e11f';
 
 var conceptInsights = watson.concept_insights({
   version: 'v1',
@@ -58,7 +59,7 @@ app.get('/', function(req, res) {
 app.get('/label_search', function(req, res, next) {
   var payload = extend({
     corpus: corpus,
-    user: username,
+    user: publicCorpusUsername,
     func: 'labelSearch',
     limit: 4,
     prefix: true,
@@ -74,7 +75,7 @@ app.get('/label_search', function(req, res, next) {
           item.id = '/graph/wikipedia/en-20120601/' + item.id; // if concept
           item.type = 'Concept';
         } else {
-          item.id = '/corpus/' + username + '/' + corpus + '/' + item.id; // if is a location
+          item.id = '/corpus/' + publicCorpusUsername + '/' + corpus + '/' + item.id; // if is a location
           item.type = 'Location';
         }
         return item;
@@ -86,7 +87,7 @@ app.get('/label_search', function(req, res, next) {
 app.get('/semantic_search', function(req, res, next) {
   var payload = extend({
     corpus: corpus,
-    user: username,
+    user: publicCorpusUsername,
     func: 'semanticSearch',
   }, req.query);
 
@@ -131,7 +132,6 @@ app.get('/get_problem', function(req, res) {
     return locations.indexOf(place.key) !== -1;
   });
 
-
   res.json(problem);
 });
 
@@ -146,9 +146,9 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   var error = {
     code: err.code || 500,
-    error: err.message || error.error
+    error: err.message || err.error
   };
-  res.status(error.code).json(error);
+  res.status(err.code).json(err);
 });
 
 var port = process.env.VCAP_APP_PORT || 3000;
