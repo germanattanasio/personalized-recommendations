@@ -18,7 +18,7 @@
 
 var express = require('express');
 var app = express();
-qvar watson = require('watson-developer-cloud');
+var watson = require('watson-developer-cloud');
 var extend = require('util')._extend;
 var fs = require('fs');
 

@@ -17,4 +17,4 @@ applications:
   name: travel-concierge
   command: node app.js
   path: .
-  memory: 1024M
+  memory: 512M
