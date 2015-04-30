@@ -1,6 +1,9 @@
 # Travel Concierge
 
-  The Travel Concierge app let you find the best place to take vacacions based on what you want to do. It uses Concept Insights to search for activities, Tradeoff Analytics to decide where to go and Question and Answer to answer questions about those places.
+  Travel Concierge is a tool that helps you find the best vacation spots to go to.  This app uses three Watson:
+  * [Concept Insights](href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/concept-insights.html") searches for your relevant places.
+  * [Tradeoff Analytics](href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tradeoff-analytics.html") helps decide which place is best.
+  * [Question and Answer](href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/question-answer.html") answers your questions about those places.
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
@@ -8,25 +11,21 @@ Demo: http://travel-concierge.mybluemix.net/
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/germanattanasio/travel-concierge)
 
-
 ## Running locally
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
-Explain how to clone the git repo they get with the deploy to bluemix button.
-
-1. Copy the credentials from your `concept-insights-service` service in Bluemix to `app.js`, you can see the credentials by going to bluemix.net.
-
-2. Install [Node.js](http://nodejs.org/)
-3. Go to the project folder in a terminal and run:
+1. Open a terminal and run:
+    `git clone git@github.com:germanattanasio/travel-concierge.git`
+2. Change the directory to travel-concierge
+    `cd travel-concierge`
+3. Copy the credentials from your services in Bluemix to `app.js`, you can see the credentials by going to your app in Bluemix and cliking on "See credentials".
+4. Install [Node.js](http://nodejs.org/) and [npm](https://github.com/npm/npm)
+5. Go to the project folder in a terminal and run:
     `npm install`
-4. Start the application
-5.  `node app.js`
-6. Go to `http://localhost:3000`
+6. Start the application
+7.  `node app.js`
+8. Go to `http://localhost:3000`
 
-
-## Troubleshooting
-
-  Explain how to see the deploy logs in jazzhub
 
 ## License
 
@@ -38,8 +37,3 @@ Explain how to clone the git repo they get with the deploy to bluemix button.
 
 ## Open Source @ IBM
   Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
-
-[service_url]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/concept-insights.html
-[cloud_foundry]: https://github.com/cloudfoundry/cli
-[getting_started]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/
-[sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
