@@ -31,13 +31,11 @@ $(document).ready(function() {
 
   var populateAnswers = function(answers) {
     $loadingAnswers.hide();
-    $.each(answers.slice(0, 3), function(_, answer) {
+    $.each(answers.slice(0, 3), function(index, answer) {
       var text = answer.text.replace(/\s+/g, ' ');
       text = text.length <= 300 ? text : text.substring(0, 300) + '...';
       $('<div class="col-lg-12 col-xs-12">')
-        .append($('<p class="answer-text">').text(text))
-        .append($('<p class="answer-confidence">')
-          .text('Confidence: ' + Math.round((answer.value * 100) / 100) + '%'))
+        .append($('<p class="answer-text">').text((index+1) + ') ' + text))
         .appendTo($answers);
     });
   };

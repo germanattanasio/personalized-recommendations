@@ -222,11 +222,7 @@ a.expert-result, a.expert-result:hover {
 
 .answer-text {
   font-size: smaller;
-  margin-bottom: 1px;
-}
-.answer-confidence {
-  font-size: smaller;
-  color:green;
+  margin-bottom: 10px;
 }
 .expert-info {
     padding-top: 5px;

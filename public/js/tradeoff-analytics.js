@@ -33,17 +33,7 @@ $(document).ready(function() {
   };
 
   var showTradeoffAnalytcsWidget = function(problem,onWidgetReady) {
-    taClient.show(
-      problem,
-      function() {
-        taClient.resize();
-        $('.ta-container').show();
-        $('html, body').animate({
-          scrollTop: $('.ta-container').offset().top
-        }, 500);
-      },
-      function() { /*no-op*/ }
-    );
+    taClient.show(problem, onResultReady, onResultSelection);
 
   };
 
@@ -53,6 +43,21 @@ $(document).ready(function() {
 
   var onPageLoad = function() {
 
+  };
+
+  var onResultReady = function(argument) {
+    taClient.resize();
+    $('.ta-container').show();
+    $('html, body').animate({
+      scrollTop: $('.ta-container').offset().top
+    }, 1000);
+  }
+
+  var onResultSelection = function(place) {
+    if (place) {
+      $('.location-id').val(JSON.stringify(place));
+      $('.location-form').submit();
+    }
   };
 
   var onError = function(error) {
