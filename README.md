@@ -1,9 +1,9 @@
 # Travel Concierge
 
   Travel Concierge is a tool that helps you find the best vacation spots to go to.  This app uses three Watson:
-  * [Concept Insights](href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/concept-insights.html") searches for your relevant places.
-  * [Tradeoff Analytics](href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tradeoff-analytics.html") helps decide which place is best.
-  * [Question and Answer](href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/question-answer.html") answers your questions about those places.
+  * [Concept Insights](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/concept-insights.html) searches for your relevant places.
+  * [Tradeoff Analytics](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tradeoff-analytics.html) helps decide which place is best.
+  * [Question and Answer](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/question-answer.html) answers your questions about those places.
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
@@ -14,13 +14,13 @@ Demo: http://travel-concierge.mybluemix.net/
 ## Running locally
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
-1. Open a terminal and run:
+1. Open a terminal and run:  
     `git clone git@github.com:germanattanasio/travel-concierge.git`
-2. Change the directory to travel-concierge
+2. Change the directory to travel-concierge 
     `cd travel-concierge`
 3. Copy the credentials from your services in Bluemix to `app.js`, you can see the credentials by going to your app in Bluemix and cliking on "See credentials".
 4. Install [Node.js](http://nodejs.org/) and [npm](https://github.com/npm/npm)
-5. Go to the project folder in a terminal and run:
+5. Go to the project folder in a terminal and run:  
     `npm install`
 6. Start the application
 7.  `node app.js`
