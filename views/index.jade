@@ -10,7 +10,7 @@ block row-content
       div#remote.input-container
         input.typeahead.form-control.query(type='text',autofocus, placeholder=' Try "snorkel" or "beach"', required='true', value='', autocomplete='off', data-provide='typeahead')
     div.col-lg-12.col-xs-12
-      h2 Places
+      h2 Results
       div.row
         div.col-lg-12.col-xs-12.text-center
           div.errorMsg(style='display:none')
@@ -21,21 +21,20 @@ block row-content
         div.noresult.text-center(style='display:none;')
           h4 No results found
         div.result(style='display:none;')
-          div.col-lg-8.col-xs-8.col-md-8.well.text-center
+          div.col-lg-12.col-xs-12.col-md-12.well.text-center
             a.btn.btn-default.btn-xs.tradeoff-btn(style='margin:10px;') Compare with Tradeoff Analytics
             .locations
 
-          div.col-lg-4.col-xs-4.col-md-4
-            div.well
-              h3 Ask questions?
-              div.form-group.row
-                div.col-lg-12.col-xs-12(style='margin-top:10px;')
-                  input.form-control.question(placeholder='Type a question...')
-                  a.btn.btn-link.example-question(style='padding-left:0px;') Try an example question
-              div.row.loading-answers(style='display:none;')
-                div.col-lg-12.col-xs-12.text-center
-                  img(src='images/watson-gray.gif')
-              div.row.answers
+          div.col-lg-12.col-xs-12.col-md-12.well
+            h3 Ask questions?
+            div.form-group.row
+              div.col-lg-12.col-xs-12(style='margin-top:10px;')
+                input.form-control.question(placeholder='Type a question...')
+                a.btn.btn-link.example-question(style='padding-left:0px;') Try an example question
+            div.row.loading-answers(style='display:none;')
+              div.col-lg-12.col-xs-12.text-center
+                img(src='images/watson-gray.gif')
+            div.row.answers
       div.result
         div.ta-container(style='display:none;margin-bottom:30px;')
           h3 Tradeoff Analytics
@@ -44,7 +43,7 @@ block row-content
               #taWidgetContainer
 
   div.location-template(style='display:none')
-    .col-lg-4.col-md-4.col-xs-6
+    .col-lg-3.col-md-3.col-xs-4
       .employee-card.row
         .overflow-container
           .expert-info.col-lg-12.col-md-12.col-xs-12

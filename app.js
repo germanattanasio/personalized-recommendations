@@ -72,10 +72,12 @@ app.get('/label_search', function(req, res, next) {
     else {
       return res.json((results || []).map(function normalize(item) {
         if (item.type === 'concept') {
-          item.id = '/graph/wikipedia/en-20120601/' + item.id; // if concept
+          // if concept
+          item.id = '/graph/wikipedia/en-20120601/' + item.id;
           item.type = 'Concept';
         } else {
-          item.id = '/corpus/' + publicCorpusUsername + '/' + corpus + '/' + item.id; // if is a location
+          // if is a location
+          item.id = '/corpus/' + publicCorpusUsername + '/' + corpus + '/' + item.id;
           item.type = 'Location';
         }
         return item;
@@ -153,7 +155,7 @@ app.use(function(err, req, res, next) {
     code: err.code || 500,
     error: err.message || err.error
   };
-  res.status(err.code).json(err);
+  res.status(error.code).json(error);
 });
 
 var port = process.env.VCAP_APP_PORT || 3000;
