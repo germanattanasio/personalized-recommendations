@@ -32,7 +32,7 @@ $(document).ready(function() {
     taClient.start(callback);
   };
 
-  var showTradeoffAnalytcsWidget = function(problem,onWidgetReady) {
+  var showTradeoffAnalytcsWidget = function(problem) {
     taClient.show(problem, onResultReady, onResultSelection);
 
   };
@@ -45,13 +45,12 @@ $(document).ready(function() {
 
   };
 
-  var onResultReady = function(argument) {
+  var onResultReady = function() {
+    $('.ta-result').show();
+    $( '.ta-loading').hide();
+    $.modal.resize();
     taClient.resize();
-    $('.ta-container').show();
-    $('html, body').animate({
-      scrollTop: $('.ta-container').offset().top
-    }, 1000);
-  }
+  };
 
   var onResultSelection = function(place) {
     if (place) {
@@ -104,6 +103,9 @@ $(document).ready(function() {
   $('.tradeoff-btn').click(function() {
     console.log('running tradeoff analytics...');
     analyze();
+    $( '.ta-loading').show();
+    $('.ta-container').modal();
+    $.modal.resize();
   });
 
   loadTradeoffAnalytics(onPageLoad, onError);

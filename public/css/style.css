@@ -245,3 +245,7 @@ hr {
     display: inline;
     font-weight: 400;
 }
+
+.modal {
+    width: 90%;
+}
