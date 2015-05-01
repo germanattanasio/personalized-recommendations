@@ -21,6 +21,8 @@ $(document).ready(function() {
   // GLOBAL VARIABLES
   var taClient = null;
 
+  $.modal.defaults.zIndex = 1000;
+
   var loadTradeoffAnalytics = function(callback, errCallback) {
     taClient = new TradeoffAnalytics({
       dilemmaServiceUrl: '/dilemmas',
@@ -106,10 +108,13 @@ $(document).ready(function() {
     console.log('running tradeoff analytics...');
     analyze();
 
-    // show 
     $( '.ta-loading').show();
     $('.ta-container').modal();
+  });
+
+  $( window ).resize(function() {
     $.modal.resize();
+    if (taClient) taClient.resize();
   });
 
   loadTradeoffAnalytics(onPageLoad, onError);
