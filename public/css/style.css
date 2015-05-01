@@ -257,6 +257,10 @@ hr {
 
 .modal {
     width: 90%;
-    z-index: 1000;
     padding: 5px 10px;
+}
+
+.modal a.close-modal {
+    top: 0px;
+    right: 0px;
 }
