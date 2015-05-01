@@ -5,7 +5,7 @@ block row-content
   div.row
     div.col-lg-12.col-xs-12
       h2 Text Input
-      p This particular demo has built a body of knowledge around the best 20 locations to go on vacations. You can query activities or topics relevant to a location.
+      p This demo is using a body of knowledge AKA the corpus of 20 vacation cities you're interested in going to with the Concept Insights API.  Type in a concept or activity and find which place is most relevant to your interests.
       div.tags-container
       div#remote.input-container
         input.typeahead.form-control.query(type='text',autofocus, placeholder=' Try "snorkel" or "beach"', required='true', value='', autocomplete='off', data-provide='typeahead')
@@ -22,8 +22,10 @@ block row-content
           h4 No results found
         div.result(style='display:none;')
           div.col-lg-12.col-xs-12.col-md-12.well.text-center
-            .locations
-            a.btn.btn-primary.btn-md.tradeoff-btn(style='margin:10px;') Compare with Tradeoff Analytics
+            p.result-description What you're seeing here are the most relevant cities out of the 20 vacation cities in the corpus.  Concept Insights automagically tags each of these cities with their Wikipedia Knowledge Graph it has developed.  Once they’re tagged, you can search against them with your search query.  The result is a list of cities that are most relevant to your search query.  Each city has a list of related and relevant activities determined by Concept Insights' knowledge graph tagging.
+            .locations.clearfix
+            div
+              a.btn.btn-primary.btn-md.tradeoff-btn(style='margin:10px;') Compare with Tradeoff Analytics
           div.col-lg-12.col-xs-12.col-md-12.well
             h3 Ask questions?
             div.form-group.row
@@ -50,6 +52,7 @@ block row-content
           .expert-info.col-lg-12.col-md-12.col-xs-12
             a.expert-result(href='/location', target='_blank')
               h4.expert-name Location Name
+              h4.expert-score Score
             hr
             ul.expertise
   form.location-form(method='post', action='destination').hidden
