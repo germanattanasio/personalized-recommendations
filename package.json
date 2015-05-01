@@ -1,5 +1,5 @@
 {
-  "name": "travel-concierge",
+  "name": "personalized-recommendations",
   "version": "0.0.1",
   "description": "Application that shows how to combine Concept Insights, Question and Answer and Tradeoff Analytics",
   "dependencies": {
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/germanattanasio/travel-concierge.git"
+    "url": "https://github.com/germanattanasio/personalized-recommendations.git"
   },
   "author": "German Attanasio Ruiz",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/germanattanasio/travel-concierge/issues"
+    "url": "https://github.com/germanattanasio/personalized-recommendations/issues"
   },
   "scripts": {
     "start": "node app.js"
