@@ -258,3 +258,8 @@ hr {
 .modal {
     width: 90%;
 }
+
+.modal a.close-modal {
+    top: 0px;
+    right: 0px;
+}
