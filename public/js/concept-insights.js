@@ -57,7 +57,7 @@ $(document).ready(function() {
     if (tags && tags.length > 0) {
       $query.attr('placeholder', 'Add more concepts...');
     } else {
-      $query.attr('placeholder', ' Try "snorkel" or "beatch"');
+      $query.attr('placeholder', ' Try "snorkel" or "beach"');
     }
   };
 
