@@ -56,6 +56,8 @@ $(document).ready(function() {
     if (place) {
       $('.location-id').val(JSON.stringify(place));
       $('.location-form').submit();
+    } else {
+      $.modal.close();
     }
   };
 
@@ -103,6 +105,8 @@ $(document).ready(function() {
   $('.tradeoff-btn').click(function() {
     console.log('running tradeoff analytics...');
     analyze();
+
+    // show 
     $( '.ta-loading').show();
     $('.ta-container').modal();
     $.modal.resize();
