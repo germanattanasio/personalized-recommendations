@@ -112,6 +112,7 @@ $(document).ready(function() {
       var locationTemplate = $('.location-template').first().clone();
       locationTemplate.find('.employee-card').prop('data-id', location.id);
       locationTemplate.find('.expert-name').text(location.label);
+      locationTemplate.find('.expert-score').text((Math.round(location.score * 1000) / 1000) * 100 + '%');
 
       var expertises = locationTemplate.find('.expertise');
       expertises.empty();
