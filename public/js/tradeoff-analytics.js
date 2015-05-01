@@ -110,6 +110,7 @@ $(document).ready(function() {
 
     $( '.ta-loading').show();
     $('.ta-container').modal();
+    $.modal.resize();
   });
 
   $( window ).resize(function() {
