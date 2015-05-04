@@ -4,7 +4,7 @@ declared-services:
     label: question_and_answer
     plan: question_and_answer_free_plan
   tradeoff-analytics-service:
-    label: tradeoff_analytis
+    label: tradeoff_analytics
     plan: free
   concept-insights-service:
     label: concept_insights
