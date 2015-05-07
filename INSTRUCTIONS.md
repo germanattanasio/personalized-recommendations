@@ -19,13 +19,17 @@ So let’s get started. The first thing to do is to build out the shell of our a
   [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/germanattanasio/personalized-recommendations)
 
   2. From here you will be taken to a Bluemix page, where you will be prompted to name your app. A sample name is provided for you, but feel free to give your application any name you like (if the name is taken by another user you will be prompted to try another name).
-  IMAGE DEPLOY TO BLUEMIX  
+
+  ![deploy](/instructions/deploy.png)
+
   **Note:** use the default settings for Region / Organization / Space on the Bluemix landing page.
 
   3. Once you have named your application, click the deploy button to begin the deploy process to Bluemix. During this process, Bluemix will automatically build and deploy our starter application based on the Github repository that we accessed at the start of the lab.
-  
+
   4. Once the application is finished deploying, you will see a "Success!" message. At this point, scroll to the top of the page and select "Dashboard" from the header bar.
-  IMAGE DEPLOY SUCCESS
+
+  ![deploy-success](/instructions/deploy-success.png)
+
 
   5. Test Out the new app. Now that we have deployed our application to Bluemix, the next step is to test out the application in its current state. Afterwards we will build out more functionality into the application.
   IMAGE APP ROUTE + EDIT CODE
@@ -67,44 +71,54 @@ So let’s get started. The first thing to do is to build out the shell of our a
   });
   ```
 
-  The code above will connect the app to the [Question and Answer][qa_service] service.  
+  The code above will connect the app to the [Question and Answer][qa_service] service.
+
+  ![app-js](/instructions/app-js.png)
+
   **Note:** For the Watson Question & Answer service to work, Watson is trained on a cor- pus of information in order to become more proficient at answering questions about that corpus. For this workshop, we have provided a pre-trained corpus based on general travel for you.
 
   5. Click on File -> Save or press Crt+S.
 
-  IMAGE HERE: SAVE CODE
+  ![app-js](/instructions/file-save.png)
 
 ## Deploy
 
   1. The last step in order to complete our application is to deploy our changes to Bluemix. To do this, we need to push our new code to the application. In the code editor screen, switch to the Git view, the 2nd icon in the left navigation bar.
 
-  IMAGE HERE: GIT ICON
+  ![git](/instructions/git.png)
 
   2. Locate your change to app.js file. Check it (select it), add a commit message, and click **Commit**.
 
+  ![commit](/instructions/commit.png)
+
   3. Click **Sync** to send your changes from this workspace to the main repository and trigger a deploy of your app.
 
-  IMAGE HERE: SYNC BUTTON
+  ![sync](/instructions/sync.png)
 
   4. Finally, Click on **Build and Deploy** to see the deploy process.
 
+  ![deploy-button](/instructions/deploy-button.png)
+
 **Note:** While this may show as overly complicated, we show it here to illustrate you can have exactly the same source management practices you could have your local environment connected to a Git repository, in the Bluemix DevOps environment.
 
+  ![deploy-process](/instructions/deploy-process.png)
 
 ## Test
 
 To test out our application, navigate back to your application homepage on Bluemix. Select the URL next to *Route* in the same way that we launched our previously unfinished application before.
 
-IMAGE HERE: APP RUNNING
+  ![app](/instructions/app.png)
 
 You will see the finished application, which utilizes the Concept In- sights, Tradeoff Analytics, and Question & Answer capabilities to pro- vide a useful tool for users researching travel options.
 Let’s try testing the application out. In the "Text Input" section, we can search for places that you can go to "snorkel". Enter "snorkel" into the text bar, and select "Snorkel" from the list of activities in the drop down menu.
 
-IMAGE HERE: SNORKEL SEARCH
+  ![snorkel](/instructions/snorkel.png)
 
 In the "Results" section, we see a list of possible locations that give us the opportunity for snorkeling. We can add additional criteria by click- ing on the activities listed under any of the locations. Try clicking on one of these now, to narrow down our criteria. In our example, we clicked on "beaches” under "Rio de Janeiro".
 
 Within the “Results” section, there is a button to "Compare with Trade- off Analytics". Based on our current criteria, let’s select that now.
+
+  ![app-full](/instructions/app-full.png)
 
 The app will navigate to the [Tradeoff Analytics][ta_service] section, where you will be able to see how the different travel options compare to each other based on flight cost, population density, and distance.
 In the grid that is visualized, our travel options are represented as lines that map to each of the values for cost, population density, and distance. By adjusting the slides on the left hand side, different options will be greyed out once they fall outside of the range set up by the slides. This allows users to quickly filter out options based on the parameters that matter to them when looking for a travel location

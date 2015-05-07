@@ -5,9 +5,9 @@
   * [Tradeoff Analytics](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tradeoff-analytics.html) helps decide which place is best.
   * [Question and Answer](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/question-answer.html) answers your questions about those places.
 
-Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
-
 Demo: http://personalized-recommendations.mybluemix.net/
+
+Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/germanattanasio/personalized-recommendations)
 
