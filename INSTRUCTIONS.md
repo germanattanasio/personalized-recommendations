@@ -1,10 +1,10 @@
 # World of Watson Labs - Personalized Recommendations
 
-This lab is part of a Drop In Lab during World of Watson 2015 at NYC. It will take you through several of the [Watson Services][wdc_services] that are available on [Bluemix][bluemix] to build a simple travel advisor application. Throughout the workshop, we will navigate through Bluemix, Github, and the source code of our application in order to demonstrate how apps can be created quickly and easily using the Bluemix platform, and the value of providing Watson and Cognitive capabilities through APIs.
+This lab is part of a Drop In Lab during World of Watson 2015 at NYC. The labs cover several [Watson Services][wdc_services] that are available on [IBM Bluemix][bluemix] to build a simple travel advisor application. Throughout the workshop, we will navigate through Bluemix, Github, and the source code of our application in order to demonstrate how apps can be created quickly and easily using the [IBM Bluemix][bluemix] platform and the value of [Watson Services][wdc_services] and Cognitive capabilities through APIs.
 
 So let’s get started. The first thing to do is to build out the shell of our application in Bluemix.
 
-## Creating a Bluemix Account
+## Creating a [IBM Bluemix][bluemix] Account
 
   1. Go to https://ace.ng.bluemix.net/
   2. Create a Bluemix account if required.
@@ -14,7 +14,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 ## Deploy this sample application in Bluemix
 
-  1. Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
+  1. Click the button below to fork the project into IBM DevOps Services and deploy your own instance of this application on [IBM Bluemix][bluemix].
 
   [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/germanattanasio/personalized-recommendations)
 
@@ -22,11 +22,11 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
   ![deploy](/instructions/deploy.png)
 
-  **Note:** use the default settings for Region / Organization / Space on the Bluemix landing page.
+  **Note:** Use the default settings for Region / Organization / Space on the Bluemix landing page.
 
   3. Once you have named your application, click the deploy button to begin the deploy process to Bluemix. During this process, Bluemix will automatically build and deploy our starter application based on the Github repository that we accessed at the start of the lab.
 
-  4. Once the application is finished deploying, you will see a "Success!" message. At this point, scroll to the top of the page and select "Dashboard" from the header bar.
+  4. Once the application has finished deploying, you will see a "Success!" message. At this point, scroll to the top of the page and select "Dashboard" from the header bar.
 
   ![deploy-success](/instructions/deploy-success.png)
 
