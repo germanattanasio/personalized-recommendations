@@ -15,7 +15,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
 1. Open a terminal and run:  
-    `git clone git@github.com:germanattanasio/personalized-recommendations.git`
+    `git clone git@github.com:watson-developer-cloud/personalized-recommendations.git`
 2. Change the directory to personalized-recommendations 
     `cd personalized-recommendations`
 3. Copy the credentials from your services in Bluemix to `app.js`, you can see the credentials by going to your app in Bluemix and cliking on "See credentials".
