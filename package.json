@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/germanattanasio/personalized-recommendations.git"
+    "url": "https://github.com/watson-developer-cloud/personalized-recommendations.git"
   },
   "author": "German Attanasio Ruiz",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/germanattanasio/personalized-recommendations/issues"
+    "url": "https://github.com/watson-developer-cloud/personalized-recommendations/issues"
   },
   "scripts": {
     "start": "node app.js"
