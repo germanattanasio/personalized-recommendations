@@ -48,7 +48,9 @@ var questionAndAnswer = watson.question_and_answer({
 var tradeoffAnalytics = watson.tradeoff_analytics({
   version: 'v1',
   username: username,
-  password: password
+  password: password,
+  url: 'https://gateway.watsonplatform.net/tradeoff-analytics/api',
+  use_vcap_services: false
 });
 
 app.get('/', function(req, res) {
