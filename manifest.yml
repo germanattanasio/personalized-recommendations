@@ -3,16 +3,16 @@ declared-services:
   question-and-answer-service:
     label: question_and_answer
     plan: question_and_answer_free_plan
-  tradeoff-analytics-service:
+  tradeoff-analytics-service-standard:
     label: tradeoff_analytics
-    plan: "standard*"
+    plan: standard
   concept-insights-service:
     label: concept_insights
     plan: free
 applications:
 - services:
   - concept-insights-service
-  - tradeoff-analytics-service
+  - tradeoff-analytics-service-standard
   - question-and-answer-service
   name: personalized-recommendations
   command: node app.js
