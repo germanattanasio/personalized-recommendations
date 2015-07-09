@@ -26,7 +26,7 @@ $(document).ready(function() {
   var loadTradeoffAnalytics = function(callback, errCallback) {
     taClient = new TradeoffAnalytics({
       dilemmaServiceUrl: '/dilemmas',
-      customCssUrl: 'https://ta-cdn.mybluemix.net/modmt/styles/watson.css',
+      customCssUrl: 'https://ta-cdn.mybluemix.net/v1/modmt/styles/watson.css',
       profile: 'basic',
       errCallback: errCallback
     }, 'taWidgetContainer');
