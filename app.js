@@ -27,6 +27,7 @@ require('./config/express')(app);
 
 var username = '<username>';
 var password = '<password>';
+
 var corpus = 'locations';
 var problem = JSON.parse(fs.readFileSync('data/problem.json', 'utf8'));
 var places = JSON.parse(fs.readFileSync('data/places.json', 'utf8'));
@@ -45,10 +46,15 @@ var questionAndAnswer = watson.question_and_answer({
   dataset: 'travel'
 });
 
+// Tradeoff Analytics has special credentials because 
+// is a General Availability service.
+var ta_username = '<ta-username>';
+var ta_password = '<ta-password>';
+
 var tradeoffAnalytics = watson.tradeoff_analytics({
   version: 'v1',
-  username: username,
-  password: password
+  username: ta_username,
+  password: ta_password,
 });
 
 app.get('/', function(req, res) {

@@ -9,13 +9,13 @@ Demo: http://personalized-recommendations.mybluemix.net/
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/germanattanasio/personalized-recommendations)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/personalized-recommendations)
 
 ## Running locally
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
 1. Open a terminal and run:  
-    `git clone git@github.com:germanattanasio/personalized-recommendations.git`
+    `git clone git@github.com:watson-developer-cloud/personalized-recommendations.git`
 2. Change the directory to personalized-recommendations 
     `cd personalized-recommendations`
 3. Copy the credentials from your services in Bluemix to `app.js`, you can see the credentials by going to your app in Bluemix and cliking on "See credentials".
@@ -29,7 +29,8 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
 
 ## License
 
-  This sample code is licensed under Apache 2.0. Full license text is available in [COPYING](LICENSE).
+  This sample code is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).  
+  This sample code is using jQuery which is licensed under MIT.  
 
 ## Contributing
 

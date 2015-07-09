@@ -41,7 +41,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
   2. Within the repository, navigate to `app.js` and open that file to view the application source code.
 
-  3. Locate the comment starting in line 107: `// tradeoff analytics REST call - here`.  
+  3. Locate the comment starting in line 113: `// tradeoff analytics REST call - here`.  
   Copy the code below under that line:  
 
   ```js
@@ -56,7 +56,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
   ```
 
   The code above will connect the app to the [Tradeoff Analytics][ta_service] service.
-  4. Locate the comment starting in line 117: `// question and answer REST call - here`.  
+  4. Locate the comment starting in line 116: `// question and answer REST call - here`.  
   Copy the code below under that line:  
 
   ```js
