@@ -127,9 +127,10 @@ By clicking on one of the lines in the grid, we are able to see details about th
 
 For our example, we decided to make our decision between Rio de Janiero and Mar del Plata based on flight cost. Try moving the right slider on the flight cost to the left. Eventually you will see Mar del Plata disappear, as it has been filtered out based on our criteria.
 
-Click on the line representing Rio and select "This is my decision". In the top right of the Tradeoff Analytics box you will see Rio loaded as our decision. Click the "Done" button next to it to advance.
+Click on the line representing Rio and select "This is my decision". In the top right of the Tradeoff Analytics box you will see Rio loaded as our decision. Click the "Done" button, and then close the tradeoff analytics window with the "x" in the top right corner of the Tradeoff Anlaytics screen. 
 
-Once we reach the landing page, we are able to ask questions about our decision. For our example with Rio, we asked Watson "How do I get to Rio?". Watson returns answers ranked by how confident it is, and we are able to quickly get the information we are looking for.
+Back on the main app view at the bottom, we are able to ask questions about our decision. For our example with Rio, we asked Watson "How do I get to Rio?". Watson returns answers ranked by how confident it is, and we are able to quickly get the information we are looking for.
+
 Enter in "How do I get to Rio?" in the chat box and press Enter.
 
 **Note:** We have built a pre-trained corpus for demo purposes only. The amount of information that Watson was trained on for this example was limited, so certain questions outside of the corpus or outside of the travel domain will return less confident answers.
