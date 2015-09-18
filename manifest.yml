@@ -11,7 +11,7 @@ declared-services:
     plan: standard
 applications:
 - services:
-  - concept-insights-service
+  - concept-insights-standard
   - tradeoff-analytics-service-standard
   - question-and-answer-service
   name: personalized-recommendations
