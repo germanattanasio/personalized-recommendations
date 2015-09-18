@@ -6,12 +6,12 @@ declared-services:
   tradeoff-analytics-service-standard:
     label: tradeoff_analytics
     plan: standard
-  concept-insights-service:
+  concept-insights-standard:
     label: concept_insights
-    plan: free
+    plan: standard
 applications:
 - services:
-  - concept-insights-service
+  - concept-insights-standard
   - tradeoff-analytics-service-standard
   - question-and-answer-service
   name: personalized-recommendations
