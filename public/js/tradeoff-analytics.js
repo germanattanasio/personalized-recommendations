@@ -26,6 +26,10 @@ $(document).ready(function() {
   var loadTradeoffAnalytics = function(callback, errCallback) {
     taClient = new TradeoffAnalytics({
       dilemmaServiceUrl: '/dilemmas',
+      metadata: {
+        'app-call-context' : 'personalized-recomendation',
+        'app-version' : '2015-09-24'
+      },
       customCssUrl: 'https://ta-cdn.mybluemix.net/v1/modmt/styles/watson.css',
       profile: 'basic',
       errCallback: errCallback
@@ -35,7 +39,7 @@ $(document).ready(function() {
   };
 
   var showTradeoffAnalytcsWidget = function(problem) {
-    taClient.show(problem, onResultReady, onResultSelection);
+    taClient.show(problem, onResultReady);
 
   };
 

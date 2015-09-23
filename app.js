@@ -25,28 +25,25 @@ var fs = require('fs');
 // Bootstrap application settings
 require('./config/express')(app);
 
-var username = '<username>';
-var password = '<password>';
+var corpus = '/corpora/laret4ry9in5/locations';
 
-var corpus = 'locations';
 var problem = JSON.parse(fs.readFileSync('data/problem.json', 'utf8'));
 var places = JSON.parse(fs.readFileSync('data/places.json', 'utf8'));
-var publicCorpusUsername = '30ac56d5-0f6e-43dc-9282-411972b2e11f';
 
 var conceptInsights = watson.concept_insights({
-  version: 'v1',
-  username: username,
-  password: password
+  version: 'v2',
+  username: '<ci-username>',
+  password: '<ci-password>'
 });
 
 var questionAndAnswer = watson.question_and_answer({
   version: 'v1',
-  username: username,
-  password: password,
+  username: '<qa-username>',
+  password: '<qa-password>',
   dataset: 'travel'
 });
 
-// Tradeoff Analytics has special credentials because 
+// Tradeoff Analytics has special credentials because
 // is a General Availability service.
 var ta_username = '<ta-username>';
 var ta_password = '<ta-password>';
@@ -63,46 +60,35 @@ app.get('/', function(req, res) {
 
 // concept insights REST calls
 app.get('/label_search', function(req, res, next) {
-  var payload = extend({
+  var params = extend({
     corpus: corpus,
-    user: publicCorpusUsername,
-    func: 'labelSearch',
-    limit: 4,
+    concept_fields: JSON.stringify({ abstract: 1, type:1, }),
     prefix: true,
-    concepts: true,
+    limit: 4,
+    concepts: true
   }, req.query);
 
-  conceptInsights.labelSearch(payload, function(err, results) {
+  conceptInsights.corpora.searchByLabel(params, function(err, results) {
     if (err)
       return next(err);
     else {
-      return res.json((results || []).map(function normalize(item) {
-        if (item.type === 'concept') {
-          // if concept
-          item.id = '/graph/wikipedia/en-20120601/' + item.id;
-          item.type = 'Concept';
-        } else {
-          // if is a location
-          item.id = '/corpus/' + publicCorpusUsername + '/' + corpus + '/' + item.id;
-          item.type = 'Location';
-        }
-        return item;
-      }));
+      return res.json(results.matches.map(function(match){
+        match.type = match.type ? 'concept' : 'document';
+        return match;
+      } ));
     }
   });
 });
 
-app.get('/semantic_search', function(req, res, next) {
+app.get('/conceptual_search', function(req, res, next) {
   var payload = extend({
     corpus: corpus,
-    user: publicCorpusUsername,
-    func: 'semanticSearch',
   }, req.query);
 
   // ids needs to be stringify
   payload.ids = JSON.stringify(payload.ids);
 
-  conceptInsights.semanticSearch(payload, function(err, results) {
+  conceptInsights.corpora.getRelatedDocuments(payload, function(err, results) {
     if (err)
       return next(err);
     else

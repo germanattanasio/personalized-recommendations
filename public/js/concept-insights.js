@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*global $:false */
+/*global $ */
 
 'use strict';
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
       return;
 
     $loading.show();
-    $.get('semantic_search', { ids: ids, limit: 9 }, callback);
+    $.get('conceptual_search', { ids: ids, limit: 4 }, callback);
   };
 
   // on success, load results into html
@@ -110,24 +110,23 @@ $(document).ready(function() {
     // for each location
     $.each(results, function(_, location) {
       var locationTemplate = $('.location-template').first().clone();
-      locationTemplate.find('.employee-card').prop('data-id', location.id);
+      locationTemplate.find('.employee-card').prop('data-id', location.id.split('/')[5]);
       locationTemplate.find('.expert-name').text(location.label);
-      locationTemplate.find('.expert-score').text((Math.round(location.score * 1000) / 1000) * 100 + '%');
+      locationTemplate.find('.expert-score').text((Math.round(location.score * 10000) / 100) + '%');
 
       var expertises = locationTemplate.find('.expertise');
       expertises.empty();
       // for each tag
-      $.each(location.tags.slice(0,5), function(_, tag) {
+      $.each(location.explanation_tags.slice(0,5), function(_, tag) {
         var concept = tag.concept;
-        var name = concept.split('/').slice(4).join('/').replace(/_/g, ' ');
 
         $('<a/>', {
           'class': 'expertise-tag',
           'href': 'javascript:void(0);',
-          'title': name,
-          'data-id': concept,
-          'data-name': name
-        }).append(name).appendTo($('<li/>').appendTo(expertises));
+          'title': concept.label,
+          'data-id': concept.id,
+          'data-name': concept.label
+        }).append(concept.label).appendTo($('<li/>').appendTo(expertises));
       });
       $locations.append(locationTemplate);
       locationTemplate.show();
@@ -170,7 +169,7 @@ $(document).ready(function() {
       suggestion: Handlebars.compile('<li> ' +
         '<h4 class="concept-name" title="{{label}}">{{label}}</h4> ' +
         '<span class="concept-type type-{{type}}">({{type}})</span> ' +
-        '<p class="more-info" title="{{result.abstract}}">{{result.abstract}}</p> ' +
+        '<p class="more-info" title="{{abstract}}">{{abstract}}</p> ' +
         '</li>')
     }
   });

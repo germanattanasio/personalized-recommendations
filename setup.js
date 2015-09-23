@@ -21,22 +21,24 @@ var request = require('request');
 var fs = require('fs');
 
 // username and password from VCAP_SERVICES
-var username = '<username>';
-var password = '<password>';
-var corpusName = 'locations';
+var username = '<concept-insights-username>';
+var password = '<concept-insights-password>';
+
+
+// corpus path /corpora/{account_id}/{corpus_name}
+var corpusPath = '/corpora/laret4ry9in5/locations';
 var wikipediaApi = 'https://en.wikipedia.org/w/api.php';
 
 // service wrapper
 var conceptInsights = watson.concept_insights({
-  version: 'v1',
+  version: 'v2',
   username: username,
   password: password
 });
 
-// create the corpus
-conceptInsights.createCorpus({
-  user: username,
-  corpus: corpusName,
+//create the corpus
+conceptInsights.corpora.createCorpus({
+  corpus:  corpusPath,
   access: 'public'
 }, function(err) {
   if (err)
@@ -50,7 +52,7 @@ conceptInsights.createCorpus({
 var loadCorpus = function() {
   // read sync
   var places = JSON.parse(fs.readFileSync('data/places.json', 'utf8'));
-  places.forEach(addPlacetoCorpus(username, corpusName));
+  places.forEach(addPlacetoCorpus(username, corpusPath));
 };
 
 var addPlacetoCorpus = function(username, corpus) {
@@ -65,12 +67,8 @@ var addPlacetoCorpus = function(username, corpus) {
         titles: place.name,
       }
     }, function(error, response, body) {
-      console.log(body); // 200
-      var _document = {
-        user: username,
-        corpus: corpus,
-        // document data
-        documentid: place.key,
+      var newDocument = {
+        id: corpus + '/documents/' + place.key,
         document: {
           id: place.key,
           label: place.name,
@@ -80,11 +78,11 @@ var addPlacetoCorpus = function(username, corpus) {
           }]
         }
       };
-      conceptInsights.updateDocument(_document, function(err) {
+      //console.log(newDocument);
+      conceptInsights.corpora.createDocument(newDocument, function(err) {
         if (err)
           return console.log(err);
-
-        console.log('document created:', _document);
+        console.log('document created:', newDocument);
       });
     });
   };
