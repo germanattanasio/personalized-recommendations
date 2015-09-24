@@ -25,7 +25,7 @@ var fs = require('fs');
 // Bootstrap application settings
 require('./config/express')(app);
 
-var corpus = '/corpora/laret4ry9in5/locations';
+var corpus = '/corpora/30ac56d5-0f6e-43dc-9282-411972b2e11f/locations';
 
 var problem = JSON.parse(fs.readFileSync('data/problem.json', 'utf8'));
 var places = JSON.parse(fs.readFileSync('data/places.json', 'utf8'));
