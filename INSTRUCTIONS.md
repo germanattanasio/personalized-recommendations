@@ -28,20 +28,20 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
   3. Once you have named your application, click the deploy button to begin the deploy process to Bluemix. During this process, Bluemix will automatically build and deploy our starter application based on the Github repository that we accessed at the start of the lab.
 
-  4. Once the application has finished deploying, you will see a "Success!" message. At this point, scroll to the top of the page and select "Dashboard" from the header bar.
+  4. Once the application has finished deploying, you will see a "Success!" message. On the same screen, you will see buttons to "Edit Code" and "View App". Let's select the "View App" button to launch the app in it's current state.
 
   ![deploy-success](/instructions/deploy-success.png)
 
 
-  5. Test Out the new app. Now that we have deployed our application to Bluemix, the next step is to test out the application in its current state. Afterwards we will build out more functionality into the application.
-  IMAGE APP ROUTE + EDIT CODE
+  5. In the starter app, you are able to enter concepts in the bar provided and see what cities might be relevant. For this example, we entered "Snorkel" as a concept.
+  
+  Right now, our app is interesting, but we can add more functionality into it to make it much more useful.
 
 ## Modify the existing application
 
-  1. Let’s edit our source code. Back on the application home page in Bluemix, you will see a link to the Jazz Hub repository, and a button to **Edit Code**.
-  Click on **Edit Code.**
+  1. It's time to edit our source code to build two more of the Watson services into the app. Back on the "Success!" page, click the button that says **Edit Code**.
 
-  2. Within the repository, navigate to `app.js` and open that file to view the application source code.
+  2. Within the repository, navigate to the `app.js` file and click on it to open the application source code.
 
   3. Locate the comment starting in line 99: `// tradeoff analytics REST call - here`.  
   Copy the code below under that line:  
@@ -58,7 +58,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
   ```
 
   The code above will connect the app to the [Tradeoff Analytics][ta_service] service.
-  4. Locate the comment starting in line 102: `// question and answer REST call - here`.  
+  4. Locate the next comment under the code we just pasted: `// question and answer REST call - here`.  
   Copy the code below under that line:  
 
   ```js
@@ -77,11 +77,13 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
   ![app-js](/instructions/app-js.png)
 
-  **Note:** For the Watson Question & Answer service to work, Watson is trained on a cor- pus of information in order to become more proficient at answering questions about that corpus. For this workshop, we have provided a pre-trained corpus based on general travel for you.
+  **Note:** For the Watson Question & Answer service to work, Watson is trained on a corpus of information in order to become more proficient at answering questions about that corpus. For this workshop, we have provided a pre-trained corpus of some general travel for you.
 
   5. Click on File -> Save or press Crt+S.
 
   ![app-js](/instructions/file-save.png)
+  
+  We've added Tradeoff Analytics and Question & Answer, but we need to update our application to reflect these changes.
 
 ## Deploy
 
@@ -107,23 +109,24 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 ## Test
 
-To test out our application, navigate back to your application homepage on Bluemix. Select the URL next to *Route* in the same way that we launched our previously unfinished application before.
+To test out our application, go back to the "Success!" page and click on the "View App" button again.
 
-  ![app](/instructions/app.png)
+  ![deploy-success](/instructions/deploy-success.png)
 
-You will see the finished application, which utilizes the Concept In- sights, Tradeoff Analytics, and Question & Answer capabilities to pro- vide a useful tool for users researching travel options.
-Let’s try testing the application out. In the "Text Input" section, we can search for places that you can go to "snorkel". Enter "snorkel" into the text bar, and select "Snorkel" from the list of activities in the drop down menu.
+You will see the finished application, which utilizes the Concept Insights, Tradeoff Analytics, and Question & Answer capabilities to provide a useful tool for users researching travel options.
+Let’s try testing the application out. In the "Text Input" section, we can search for places that you can go to snorkel. Enter "snorkel" into the text bar, and select "Snorkel" from the list of activities in the drop down menu.
 
   ![snorkel](/instructions/snorkel.png)
 
-In the "Results" section, we see a list of possible locations that give us the opportunity for snorkeling. We can add additional criteria by click- ing on the activities listed under any of the locations. Try clicking on one of these now, to narrow down our criteria. In our example, we clicked on "beaches” under "Rio de Janeiro".
+In the "Results" section, we see a list of possible locations that give us the opportunity for snorkeling. We can add additional criteria by clicking on the activities listed under any of the locations. Try clicking on one of these now, to narrow down our criteria. In our example, we clicked on "beaches” under "Rio de Janeiro".
 
-Within the “Results” section, there is a button to "Compare with Trade- off Analytics". Based on our current criteria, let’s select that now.
+Within the “Results” section, there is a button to "Compare with Tradeoff Analytics". Based on our current criteria, let’s select that now.
 
   ![app-full](/instructions/app-full.png)
 
 The app will navigate to the [Tradeoff Analytics][ta_service] section, where you will be able to see how the different travel options compare to each other based on flight cost, population density, and distance.
-In the grid that is visualized, our travel options are represented as lines that map to each of the values for cost, population density, and distance. By adjusting the slides on the left hand side, different options will be greyed out once they fall outside of the range set up by the slides. This allows users to quickly filter out options based on the parameters that matter to them when looking for a travel location
+
+In the grid that is visualized, our travel options are represented as lines that map to each of the values for cost, population density, and distance. By adjusting the sliders on the left-hand side, different options will be greyed out once they fall outside of the range set up by the slides. This allows users to quickly filter out options based on the parameters that matter to them when looking for a travel location
 
 By clicking on one of the lines in the grid, we are able to see details about this option, and are able to select one of them as our decision.
 
