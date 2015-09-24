@@ -40,7 +40,7 @@ $(document).ready(function() {
       return;
 
     $loading.show();
-    $.get('conceptual_search', { ids: ids, limit: 4 }, callback);
+    $.get('conceptual_search', { ids: ids, limit: 8 }, callback);
   };
 
   // on success, load results into html
