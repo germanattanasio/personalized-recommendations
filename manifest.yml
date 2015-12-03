@@ -1,8 +1,5 @@
 ---
 declared-services:
-  question-and-answer-service:
-    label: question_and_answer
-    plan: question_and_answer_free_plan
   tradeoff-analytics-service-standard:
     label: tradeoff_analytics
     plan: standard
@@ -13,7 +10,6 @@ applications:
 - services:
   - concept-insights-standard
   - tradeoff-analytics-service-standard
-  - question-and-answer-service
   name: personalized-recommendations
   command: node app.js
   path: .
