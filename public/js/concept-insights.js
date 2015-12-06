@@ -33,6 +33,7 @@ $(document).ready(function() {
 
   // get results query
   var getResults = function(ids, callback) {
+    $errorMsg.hide();
     $result.hide();
     $noresult.hide();
 

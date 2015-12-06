@@ -25,33 +25,23 @@ var fs = require('fs');
 // Bootstrap application settings
 require('./config/express')(app);
 
-var corpus = '/corpora/30ac56d5-0f6e-43dc-9282-411972b2e11f/locations';
+var corpus = '/corpora/laret4ry9in5/locations';
 
 var problem = JSON.parse(fs.readFileSync('data/problem.json', 'utf8'));
 var places = JSON.parse(fs.readFileSync('data/places.json', 'utf8'));
 
+// Concept Insights credentials
 var conceptInsights = watson.concept_insights({
   version: 'v2',
   username: '<ci-username>',
   password: '<ci-password>'
 });
 
-var questionAndAnswer = watson.question_and_answer({
-  version: 'v1',
-  username: '<qa-username>',
-  password: '<qa-password>',
-  dataset: 'travel'
-});
-
-// Tradeoff Analytics has special credentials because
-// is a General Availability service.
-var ta_username = '<ta-username>';
-var ta_password = '<ta-password>';
-
+// Tradeoff Analytics credentials
 var tradeoffAnalytics = watson.tradeoff_analytics({
   version: 'v1',
-  username: ta_username,
-  password: ta_password,
+  username: '<ta-username>',
+  password: '<ta-password>',
 });
 
 app.get('/', function(req, res) {
@@ -97,10 +87,14 @@ app.get('/conceptual_search', function(req, res, next) {
 });
 
 // tradeoff analytics REST call - here
-
-
-// question and answer REST call
-
+app.post('/dilemmas', function(req, res, next) {
+  tradeoffAnalytics.dilemmas(req.body, function(err, dilemmas) {
+    if (err)
+      return next(err);
+    else
+      return res.json(dilemmas);
+  });
+});
 
 app.get('/get_problem', function(req, res) {
   // locations resulting from concept insights
@@ -118,22 +112,8 @@ app.post('/destination', function(req, res) {
   res.render('destination', JSON.parse(req.body.place || {}) );
 });
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.code = 404;
-  err.message = 'Not Found';
-  next(err);
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  var error = {
-    code: err.code || 500,
-    error: err.message || err.error
-  };
-  res.status(error.code).json(error);
-});
+// error-handler settings
+require('./config/error-handler')(app);
 
 var port = process.env.VCAP_APP_PORT || 3000;
 app.listen(port);

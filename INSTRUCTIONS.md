@@ -1,6 +1,6 @@
 # Watson Hands On Labs - Personalized Recommendations
 
-This lab was originally created as a part of the World of Watson event in May 2015. 
+This lab was originally created as a part of the World of Watson event in May 2015.
 
 The labs cover several [Watson Services][wdc_services] that are available on [IBM Bluemix][bluemix] to build a simple travel advisor application. Throughout the workshop, we will navigate through Bluemix, Github, and the source code of our application in order to demonstrate how apps can be created quickly and easily using the [IBM Bluemix][bluemix] platform and the value of [Watson Services][wdc_services] and Cognitive capabilities through APIs.
 
@@ -34,7 +34,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 
   5. In the starter app, you are able to enter concepts in the bar provided and see what cities might be relevant. For this example, we entered "Snorkel" as a concept.
-  
+
   Right now, our app is interesting, but we can add more functionality into it to make it much more useful.
 
 ## Modify the existing application
@@ -58,32 +58,14 @@ So let’s get started. The first thing to do is to build out the shell of our a
   ```
 
   The code above will connect the app to the [Tradeoff Analytics][ta_service] service.
-  4. Locate the next comment under the code we just pasted: `// question and answer REST call - here`.  
-  Copy the code below under that line:  
 
-  ```js
-  app.get('/ask_question', function(req, res, next) {
-    questionAndAnswer.ask(req.query, function(err, pipelines) {
-      if (err)
-        return next(err);
-      else {
-        return res.json(pipelines[0].question.evidencelist);
-      }
-    });
-  });
-  ```
-
-  The code above will connect the app to the [Question and Answer][qa_service] service.
-
-  ![app-js](/instructions/app-js.png)
-
-  **Note:** For the Watson Question & Answer service to work, Watson is trained on a corpus of information in order to become more proficient at answering questions about that corpus. For this workshop, we have provided a pre-trained corpus of some general travel for you.
+  ![app-js](/instructions/app_ta.png)
 
   5. Click on File -> Save or press Crt+S.
 
   ![app-js](/instructions/file-save.png)
-  
-  We've added Tradeoff Analytics and Question & Answer, but we need to update our application to reflect these changes.
+
+  We've added Tradeoff Analytics, but we need to update our application to reflect these changes.
 
 ## Deploy
 
@@ -132,7 +114,7 @@ By clicking on one of the lines in the grid, we are able to see details about th
 
 For our example, we decided to make our decision between Rio de Janiero and Mar del Plata based on flight cost. Try moving the right slider on the flight cost to the left. Eventually you will see Mar del Plata disappear, as it has been filtered out based on our criteria.
 
-Click on the line representing Rio and select "This is my decision". In the top right of the Tradeoff Analytics box you will see Rio loaded as our decision. Click the "Done" button, and then close the tradeoff analytics window with the "x" in the top right corner of the Tradeoff Anlaytics screen. 
+Click on the line representing Rio and select "This is my decision". In the top right of the Tradeoff Analytics box you will see Rio loaded as our decision. Click the "Done" button, and then close the tradeoff analytics window with the "x" in the top right corner of the Tradeoff Anlaytics screen.
 
 Back on the main app view at the bottom, we are able to ask questions about our decision. For our example with Rio, we asked Watson "How do I get to Rio?". Watson returns answers ranked by how confident it is, and we are able to quickly get the information we are looking for.
 
@@ -140,10 +122,9 @@ Enter in "How do I get to Rio?" in the chat box and press Enter.
 
 **Note:** We have built a pre-trained corpus for demo purposes only. The amount of information that Watson was trained on for this example was limited, so certain questions outside of the corpus or outside of the travel domain will return less confident answers.
 
-# Congratulations 
+# Congratulations
 You have completed the Personalized Recommendations Lab! :bowtie:
 
 [bluemix]: https://console.ng.bluemix.net/
 [wdc_services]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/services-catalog.html
 [ta_service]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/tradeoff-analytics.html
-[qa_service]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/question-answer.html
