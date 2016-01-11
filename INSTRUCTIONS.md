@@ -43,7 +43,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
   2. Within the repository, navigate to the `app.js` file and click on it to open the application source code.
 
-  3. Locate the comment starting in line 99: `// tradeoff analytics REST call - here`.  
+  3. Locate the comment starting in line 89: `// tradeoff analytics REST call - here`.  
   Copy the code below under that line:  
 
   ```js
@@ -95,7 +95,7 @@ To test out our application, go back to the "Success!" page and click on the "Vi
 
   ![deploy-success](/instructions/deploy-success.png)
 
-You will see the finished application, which utilizes the Concept Insights, Tradeoff Analytics, and Question & Answer capabilities to provide a useful tool for users researching travel options.
+You will see the finished application, which utilizes the Concept Insights and Tradeoff Analytics capabilities to provide a useful tool for users researching travel options.
 Let’s try testing the application out. In the "Text Input" section, we can search for places that you can go to snorkel. Enter "snorkel" into the text bar, and select "Snorkel" from the list of activities in the drop down menu.
 
   ![snorkel](/instructions/snorkel.png)
@@ -115,12 +115,6 @@ By clicking on one of the lines in the grid, we are able to see details about th
 For our example, we decided to make our decision between Rio de Janiero and Mar del Plata based on flight cost. Try moving the right slider on the flight cost to the left. Eventually you will see Mar del Plata disappear, as it has been filtered out based on our criteria.
 
 Click on the line representing Rio and select "This is my decision". In the top right of the Tradeoff Analytics box you will see Rio loaded as our decision. Click the "Done" button, and then close the tradeoff analytics window with the "x" in the top right corner of the Tradeoff Anlaytics screen.
-
-Back on the main app view at the bottom, we are able to ask questions about our decision. For our example with Rio, we asked Watson "How do I get to Rio?". Watson returns answers ranked by how confident it is, and we are able to quickly get the information we are looking for.
-
-Enter in "How do I get to Rio?" in the chat box and press Enter.
-
-**Note:** We have built a pre-trained corpus for demo purposes only. The amount of information that Watson was trained on for this example was limited, so certain questions outside of the corpus or outside of the travel domain will return less confident answers.
 
 # Congratulations
 You have completed the Personalized Recommendations Lab! :bowtie:
