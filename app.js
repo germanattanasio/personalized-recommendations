@@ -87,14 +87,7 @@ app.get('/conceptual_search', function(req, res, next) {
 });
 
 // tradeoff analytics REST call - here
-app.post('/dilemmas', function(req, res, next) {
-  tradeoffAnalytics.dilemmas(req.body, function(err, dilemmas) {
-    if (err)
-      return next(err);
-    else
-      return res.json(dilemmas);
-  });
-});
+
 
 app.get('/get_problem', function(req, res) {
   // locations resulting from concept insights
